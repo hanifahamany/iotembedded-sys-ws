@@ -3,8 +3,10 @@ import os
 import sys
 import time
 import platform
+import tkinter as tk
 from datetime import datetime
 import keyboard
+from tkinter import messagebox
 
 # =============================
 # conf
@@ -61,7 +63,24 @@ def draw_overlay(frame, status_text, burst_active):
     return frame
 
 
+def show_usage_instructions():
+    root = tk.Tk()
+    root.withdraw()
+    messagebox.showinfo(
+        "Webcam Capture Tools",
+        "Tata Cara Penggunaan:\n\n"
+        f"- Tekan {KEY_CAPTURE.upper()} untuk mengambil 1 foto.\n"
+        f"- Tahan tombol {KEY_BURST.upper()} untuk mengambil foto beruntun.\n"
+        f"- Tekan {KEY_QUIT.upper()} untuk keluar dari program.\n\n"
+        "Foto akan disimpan di folder captures.\n\n"
+        "Klik OK untuk memulai Webcam Capture Tools.",
+        parent=root,
+    )
+    root.destroy()
+
+
 def main():
+    show_usage_instructions()
     cap = open_camera()
 
     window_name = "Kontrol Kamera Lokal - OpenCV"
