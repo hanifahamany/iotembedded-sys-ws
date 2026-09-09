@@ -1,6 +1,6 @@
 # Local Webcam Capture Tool
 
-## 🛠️ Tools
+## 🛠️ Tech Stack
 * **Camera library:** OpenCV (cv2)
 * **Bahasa pemrograman:** Python
 * **GUI/window library:** OpenCV HighGUI (cv2.imshow, cv2.namedWindow)
